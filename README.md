@@ -1,4 +1,4 @@
-# Core 1.0
+# ShopAdminPanel 1.0 (Based On RiotJS)
 # Author: UchaBokeria
 
 ## Start
