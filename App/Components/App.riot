@@ -1,10 +1,43 @@
 <App>
-    <div class="Side-bar">
-        <h1>Holla Senior {props.name}</h1>
+    <div class="Side-bar {minimizer ? 'Minimize' : ''}">
+        <div class="Title" Route="Dashboard"> 
+            <p  onclick={route}>{title}</p> 
+            <i  class="material-icons { minimizer ? 'Hide' : '' }" onclick={minimize}>close</i>
+            <i  class="material-icons {!minimizer ?  'Hide' : '' }" onclick={minimize}>menu</i>
+        </div>
         
-        <p onclick={route} Route="Home">Route Home</p>
-        <p onclick={route} Route="About">Route About</p>
+        <div class="Navigation">
+            <div onclick={route} Route="Dashboard" class="Active"> 
+                <i class="material-icons">home</i> 
+                <p>Dashboard</p>
+            </div>
+
+            <div onclick={route} Route="Handbook">
+                <i class="material-icons">auto_stories</i> 
+                <p>Handbook</p>
+            </div>
+
+            <div onclick={route} Route="Calendar">
+                <i class="material-icons">calendar_month</i> 
+                <p>Calendar</p>
+            </div>
+
+            <div onclick={route} Route="Archive">
+                <i class="material-icons">inventory_2</i> 
+                <p>Archive</p>
+            </div>
+
+            <div onclick={route} Route="Analytics">
+                <i class="material-icons">signal_cellular_alt</i> 
+                <p>Analytics</p>
+            </div>
+            
+            <div onclick={route} Route="Settings">
+                <i class="material-icons">settings</i> 
+                <p>Settings</p>
+            </div>
+        </div>
     </div>
 
-    <outlet class="Content"></outlet>
+    <outlet class="Content  {minimizer ? 'Content-minimize' : ''}"></outlet>
 </App>

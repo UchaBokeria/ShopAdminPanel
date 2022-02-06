@@ -4,27 +4,107 @@ body {
     margin:0;
     padding:0;
     box-sizing: border-box;
-    background-color: $white;
+    background-color: $gray;
 }
 
 .Side-bar {
-    width: 25%;
+    width: 20%;
     height: 100vh;
-    
-    p { 
-        cursor: pointer; 
-        font-family: Roboto;
-        color: crimson;
+    z-index: 10000;
+    position:fixed;
+    word-wrap:unset;
+    overflow:hidden;
+    user-select: none;
+    background-color: $white;
+    transition: 0.5s ease-in-out;
+    @include BoxShadow();
+
+    p{transition:1s;}
+
+    .Title {
+        width:100%;
+        height:13vh;
+        color: $white;
+        font-size:1.8vw;
+        letter-spacing: 10px;
+        font-family: Lobster;
+        background-color: $primary;
+        background-image: linear-gradient(to right, $primary , $secondary);
+
+        display:flex;
+        text-indent: 2vw;
+        flex-direction: column;
+        justify-content: center;
+
+        p {cursor: pointer;}
+
+        i {
+            cursor: pointer;
+            color:inherit;
+            font-size:2vw;
+            right: 1.45vw;
+            position: absolute;
+        }
+
+        .Hide { display:none; }
     }
 
-    @include Flex(space-around, column);
+    .Navigation {
+        box-sizing: border-box;
+        width:100%;
+        height:78vh;
+        letter-spacing: 2px;
+
+        div { 
+            position:relative;
+            width: 100%;
+            text-indent: 25%;
+            font-family: Roboto-Bold;
+            cursor: pointer; 
+            font-family: Roboto;
+            color: $black;
+
+            i {
+                color:inherit;
+                font-size:2vw;
+                position: absolute;
+                left:1vw;
+                top:-1vh;
+            }
+        }
+        
+        .Active {
+            color: crimson;
+            border-left: 4vw solid $primary;
+        }
+
+        @include Flex(space-around, column);
+    }
+
 }
 
 .Content {
-    width: 60%;
-    height: 100vh;
-    position: absolute;
+    background-color: $gray;
+    box-sizing: border-box;
+    position:absolute;
     top: 0;
     right: 0;
-    padding: 7%;
+    padding: 3%;
+    width: 80%;
+    height: 100vh;
 }
+
+.Minimize {
+    
+    transition: 0.5s ease-in-out;
+    width: 5%;
+
+    .Navigation .Active {
+        color: crimson;
+        border: 0;
+    }
+
+    p { transition:0.3s;opacity: 0; }
+}
+
+.Content-minimize { transition: 0.5s ease-in-out; width: 95%;  }
