@@ -1,0 +1,8 @@
+/* This file is for Mixin-declaration */
+
+@mixin Flex($justify: center, $direction: row) {
+    display: flex;
+    align-items: center;
+    justify-content: $justify;
+    flex-direction: $direction;
+}

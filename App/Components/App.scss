@@ -1,0 +1,30 @@
+@import "../Assets/Styles/Linkin";
+
+body {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    background-color: $white;
+}
+
+.Side-bar {
+    width: 25%;
+    height: 100vh;
+    
+    p { 
+        cursor: pointer; 
+        font-family: Roboto;
+        color: crimson;
+    }
+
+    @include Flex(space-around, column);
+}
+
+.Content {
+    width: 60%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 7%;
+}

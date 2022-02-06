@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+        "experimentalDecorators": true,
+        "outDir": "Dist",
+        "noImplicitAny": true,
+        "sourceMap": true,
+        "module": "esnext",
+        "target": "es5",
+        "allowJs": true,
+        "types": [
+            "node",
+            "webpack-env" // here
+        ],
+        "moduleResolution": "node",
+        "allowSyntheticDefaultImports": true,
+        "baseUrl": ".",
+        "paths": {
+          "@/*": [
+            "App/*"
+          ]
+        }
+    }
+}
