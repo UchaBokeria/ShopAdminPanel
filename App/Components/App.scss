@@ -12,6 +12,8 @@ body {
     height: 100vh;
     z-index: 10000;
     position:fixed;
+    top:0;
+    left:0;
     word-wrap:unset;
     overflow:hidden;
     user-select: none;
@@ -65,6 +67,7 @@ body {
             color: $black;
 
             i {
+                transition: 1s ;
                 color:inherit;
                 font-size: 1.8vw;
                 position: absolute;
@@ -83,6 +86,7 @@ body {
         .Active {
             color: crimson;
             border-left: 4vw solid $primary;
+
         }
 
         @include Flex(space-around, column);
