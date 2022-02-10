@@ -1,10 +1,9 @@
 import '@riotjs/hot-reload'
 import { mount } from 'riot'
 import { register } from 'riot'
-import { Router, Route } from './Components/Routing.module'
+import { Router, Route , StartPoint } from './Components/Routing.module'
 
 
-const StartPoint = "Home";
 const Serve = async (callback:any) => await callback();
 
 Serve( async ()=> {
@@ -28,6 +27,7 @@ Serve( async ()=> {
     register(name, component.default || component)
 
     i++;
+    
     if(i == last)  
       mount('[Riot]')
 
