@@ -1,9 +1,11 @@
 <App>
+
     <div class="Side-bar {minimizer ? 'Minimize' : ''}">
+
         <div class="Title" Route="Dashboard"> 
             <p  onclick={route}>{title}</p> 
             <i  class="material-icons { minimizer ? 'Hide' : '' }" onclick={minimize}>close</i>
-            <i  class="material-icons {!minimizer ?  'Hide' : '' }" onclick={minimize}>menu</i>
+            <i  class="material-icons {!minimizer ? 'Hide' : '' }" onclick={minimize}>menu</i>
         </div>
         
         <div class="Navigation">
@@ -37,7 +39,12 @@
                 <p>Settings</p>
             </div>
         </div>
+
     </div>
 
     <outlet class="Content  {minimizer ? 'Content-minimize' : ''}"></outlet>
+
+    <div id="Dialog-Box"></div>
+    <div id="Message-Box"></div>
+
 </App>

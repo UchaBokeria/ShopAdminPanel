@@ -1,0 +1,100 @@
+<Dashboard>
+    <div id="Header-bar">
+        <button>
+            <i class="material-icons">post_add</i> 
+            <p>Register</p>
+        </button>
+
+        <div class="Search">
+
+            <i class="material-icons">search</i>
+            <input type="text" onkeyup="Search" placeholder="Search ..">
+            <i class="material-icons">arrow_drop_down</i>
+
+            <div class="Filter-dropdown">
+                <div class="checkboxes">
+                    <div> <input type="checkbox" > In Stock </div>
+                    <div> <input type="checkbox" > Show In Store </div>
+                </div>
+
+                <div class="Price-range"> 
+                    <div> O </div>
+                    <div> - </div>
+                    <div> o </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="Sorting">
+            <div> Code </div>
+            <div> Title </div>
+            <div> Price </div>
+            <div> In Stock </div>
+            <div> Show In Store </div>
+        </div>
+
+    </div>
+
+    <div id="Table">
+        <div class="Header-table">
+
+            <div class="Record-col">Code</div>
+            <div class="Record-col"></div>
+            <div class="Record-col">Title</div>
+            <div class="Record-col">Price</div>
+            <div class="Record-col">In Stock</div>
+            <div class="Record-col">Show In Store</div>
+
+            <div class="Record-col row-Remove remove-all">
+                <i class="material-icons" onclick="{removeAll}">delete</i>
+            </div>
+
+            <div class="Record-col row-Checkbox check-all">
+                <input type="checkbox">
+            </div>
+
+        </div>
+
+        <div class="Body-table">
+            <div class="Record-row" each="{(each, ind) in Products}" row-id="{each.id}" row-num="{ind}">
+                <div class="Record-col" col-data="{each.id}"> {each.id} </div>
+                <div class="Record-col" col-data="{each.thumbnail}"> 
+                    <img src="{each.thumbnail}" alt="{each.thumbnail}"> 
+                </div>
+                <div class="Record-col" col-data="{each.title}"> {each.title} </div>
+                <div class="Record-col" col-data="{each.price}"> ${each.price} </div>
+                <div class="Record-col" col-data="{each.status}"> {each.status} </div>
+                <div class="Record-col" col-data="{each.showInStore}"> {each.showInStore} </div>
+
+                <div class="Record-col row-Remove" col-data="{each.id}">
+                    <i class="material-icons" onclick="{removeEach}" this-data="{each.id}">remove_circle</i>
+                </div>
+
+                <div class="Record-col row-Checkbox" col-data="{each.id}">
+                    <input type="checkbox" this-data="{each.id}">
+                </div>
+            </div>
+        </div>
+
+        <div class="Footer-table">
+            <div class="PerPage">
+                <p>Items Per Page</p>
+
+                <select name="perPage">
+                    <option value="10" selected>10</option>
+                    <option value="10">20</option>
+                    <option value="10">30</option>
+                    <option value="10">All</option>
+                </select>
+            </div>
+
+            <div class="paging">
+                <div class="Prev"><</div>
+                <div class="Pages" each="each in Paging">{each}</div>
+                <div class="Next">></div>
+            </div>
+        </div>
+
+    </div>
+</Dashboard>
