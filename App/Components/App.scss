@@ -52,7 +52,7 @@ body {
     .Navigation {
         box-sizing: border-box;
         width:100%;
-        height:78vh;
+        height:86vh;
         letter-spacing: 2px;
 
         div { 
@@ -71,8 +71,15 @@ body {
                 left:1vw;
                 top:-1vh;
             }
+
+            &:hover > i {
+                transition: 1s ;
+                color: crimson;
+            }
         }
         
+        
+
         .Active {
             color: crimson;
             border-left: 4vw solid $primary;
